@@ -3,56 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>HAINAN DEKUN INVESTMENT CO., LTD</title>
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; }
-        .carousel { width: 100%; /* Your carousel styles */ }
-        /* Add more styles for your sections */
-        video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        /* Basic styles for body and layout */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: fade 15s infinite;
+        }
+        @keyframes fade {
+            0% { opacity: 0; }
+            5% { opacity: 1; }
+            20% { opacity: 1; }
+            25% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .video-background video {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            max-width: none;
+            transform: translate(-50%, -50%);
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        #africa-map {
+            height: 400px;
+            background-color: lightgray;
+        }
+        .project, .esg-module, .investor-portal {
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Additional styling can go here */
     </style>
 </head>
 <body>
 
-<video autoplay muted loop>
-    <source src="your-video-file.mp4" type="video/mp4">
-</video>
+    <div class="carousel">
+        <img src="image1.jpg" alt="Carousel Image 1">
+        <img src="image2.jpg" alt="Carousel Image 2">
+        <img src="image3.jpg" alt="Carousel Image 3">
+        <!-- Add more images as needed -->
+    </div>
 
-<div class="carousel">
-    <!-- Add carousel items here with auto-rotation functionality -->
-</div>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="background-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
-<div id="africa-map">
-    <!-- Dynamic markers will be added here using JavaScript -->
-</div>
+    <div class="content">
+        <h1>HAINAN DEKUN INVESTMENT CO., LTD</h1>
+        <div id="africa-map">Africa Map with Dynamic Markers</div>
 
-<div id="projects-showcase">
-    <h2>Projects Showcase</h2>
-    <!-- Showcase your projects here -->
-</div>
+        <div class="project">
+            <h2>Projects Showcase</h2>
+            <p>Details about latest projects.</p>
+        </div>
 
-<div id="esg-module">
-    <h2>ESG Module</h2>
-    <!-- Your ESG content here -->
-</div>
+        <div class="esg-module">
+            <h2>ESG Module</h2>
+            <p>Information on Environmental, Social and Governance initiatives.</p>
+        </div>
 
-<div id="investor-portal">
-    <h2>Investor Portal</h2>
-    <!-- Investor portal details and links here -->
-</div>
+        <div class="investor-portal">
+            <h2>Investor Portal</h2>
+            <p>Access to investor resources and information.</p>
+        </div>
+    </div>
 
-<script>
-    // Carousel auto-rotation script
-    var index = 0;
-    function rotateCarousel() {
-        var items = document.querySelectorAll('.carousel-item');
-        items[index].style.display = 'none';
-        index = (index + 1) % items.length;
-        items[index].style.display = 'block';
-    }
-    setInterval(rotateCarousel, 3000); // Rotate every 3 seconds
+    <script>
+        // JavaScript for dynamic markers on Africa map
+        function initMap() {
+            const map = document.getElementById('africa-map');
+            // Code to initialize map and add markers
+            // For example, using an external library like Leaflet.js or Google Maps
+        }
 
-    // Add dynamic markers to the Africa map here
-</script>
+        window.onload = initMap;
+
+        // Carousel functionality could be added here if required
+    </script>
 
 </body>
 </html>
