@@ -3,78 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Dekun</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Your Portfolio</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .carousel { width: 100%; /* Your carousel styles */ }
+        /* Add more styles for your sections */
+        video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+    </style>
 </head>
 <body>
-    <!-- Video Background -->
-    <div class="video-background">
-        <video autoplay muted loop>
-            <source src="background.mp4" type="video/mp4">
-        </video>
-    </div>
 
-    <!-- Carousel -->
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="slide1.jpg" class="d-block w-100" alt="Slide 1">
-            </div>
-            <div class="carousel-item">
-                <img src="slide2.jpg" class="d-block w-100" alt="Slide 2">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+<video autoplay muted loop>
+    <source src="your-video-file.mp4" type="video/mp4">
+</video>
 
-    <!-- Africa Map -->
-    <div id="map" style="height: 400px;"></div>
-    <script>
-        var map = L.map('map').setView([8.7832, 34.5085], 3);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-        }).addTo(map);
+<div class="carousel">
+    <!-- Add carousel items here with auto-rotation functionality -->
+</div>
 
-        // Dynamic Markers (example locations)
-        var markers = [
-            [15.0, 30.0],
-            [-1.0, 30.0],
-            [9.0, 20.0]
-        ];
-        markers.forEach(function(marker) {
-            L.marker(marker).addTo(map);
-        });
-    </script>
+<div id="africa-map">
+    <!-- Dynamic markers will be added here using JavaScript -->
+</div>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Our Projects</h2>
-        <p>Details about projects...</p>
-    </section>
+<div id="projects-showcase">
+    <h2>Projects Showcase</h2>
+    <!-- Showcase your projects here -->
+</div>
 
-    <!-- ESG Module -->
-    <section id="esg">
-        <h2>ESG Initiatives</h2>
-        <p>Information about our ESG initiatives...</p>
-    </section>
+<div id="esg-module">
+    <h2>ESG Module</h2>
+    <!-- Your ESG content here -->
+</div>
 
-    <!-- Investor Portal -->
-    <section id="investor-portal">
-        <h2>Investor Portal</h2>
-        <p>Access to the investor portal...</p>
-    </section>
+<div id="investor-portal">
+    <h2>Investor Portal</h2>
+    <!-- Investor portal details and links here -->
+</div>
 
-    <script src="script.js"></script>
+<script>
+    // Carousel auto-rotation script
+    var index = 0;
+    function rotateCarousel() {
+        var items = document.querySelectorAll('.carousel-item');
+        items[index].style.display = 'none';
+        index = (index + 1) % items.length;
+        items[index].style.display = 'block';
+    }
+    setInterval(rotateCarousel, 3000); // Rotate every 3 seconds
+
+    // Add dynamic markers to the Africa map here
+</script>
+
 </body>
 </html>
