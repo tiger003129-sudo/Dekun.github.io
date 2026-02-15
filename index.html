@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAINAN DEKUN INVESTMENT CO., LTD</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Montserrat',sans-serif;
+background:#0d0d0d;
+color:white;
+scroll-behavior:smooth;
+}
+
+header{
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.9);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 60px;
+z-index:1000;
+border-bottom:1px solid #333;
+}
+
+.logo{
+font-weight:800;
+color:#CFA348;
+font-size:18px;
+}
+
+nav a{
+color:#CFA348;
+margin-left:30px;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
+}
+
+nav a:hover{color:white;}
+
+.lang{
+cursor:pointer;
+border:1px solid #CFA348;
+padding:5px 10px;
+margin-left:20px;
+}
+
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+url('https://images.unsplash.com/photo-1604079629194-6b8f66f6b8e3');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+.hero h1{
+font-size:56px;
+color:#CFA348;
+font-weight:800;
+letter-spacing:2px;
+}
+
+.hero p{
+margin-top:20px;
+font-size:18px;
+color:#ccc;
+}
+
+.btn{
+margin-top:30px;
+padding:14px 35px;
+background:#CFA348;
+color:black;
+text-decoration:none;
+font-weight:700;
+}
+
+.section{
+padding:120px 10%;
+}
+
+.section h2{
+color:#CFA348;
+font-size:32px;
+margin-bottom:40px;
+border-left:6px solid #CFA348;
+padding-left:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+}
+
+.card{
+background:#151515;
+padding:30px;
+border:1px solid #333;
+transition:0.4s;
+}
+
+.card:hover{
+border-color:#CFA348;
+transform:translateY(-10px);
+}
+
+.map{
+text-align:center;
+background:#111;
+padding:80px 10%;
+}
+
+footer{
+background:black;
+text-align:center;
+padding:40px;
+color:#CFA348;
+font-size:14px;
+}
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">HAINAN DEKUN INVESTMENT</div>
+<nav>
+<a href="#about">ABOUT</a>
+<a href="#services">BUSINESS</a>
+<a href="#global">GLOBAL</a>
+<a href="#esg">ESG</a>
+<a href="#contact">CONTACT</a>
+<span class="lang" onclick="toggleLang()">中文</span>
+</nav>
+</header>
+
+<section class="hero">
+<h1>GLOBAL MINING INVESTMENT GROUP</h1>
+<p id="hero-text">Strategic Focus on Africa & Central Asia</p>
+<a href="#contact" class="btn">Investment Cooperation</a>
+</section>
+
+<section class="section fade" id="about">
+<h2>About Us</h2>
+<p>
+HAINAN DEKUN INVESTMENT CO., LTD is a strategic mining investment and resource development company.
+Core services include mining equity investment, geological exploration, reserve verification,
+mine development advisory and global non-ferrous metal trading.
+</p>
+</section>
+
+<section class="section fade" id="services">
+<h2>Core Business</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Mining Investment</h3>
+<p>Strategic equity participation in gold, copper, lithium and critical mineral projects.</p>
+</div>
+
+<div class="card">
+<h3>Geological Exploration</h3>
+<p>Comprehensive exploration, feasibility studies and technical reporting.</p>
+</div>
+
+<div class="card">
+<h3>Reserve Verification</h3>
+<p>Independent reserve validation aligned with international standards.</p>
+</div>
+
+<div class="card">
+<h3>Mine Development Advisory</h3>
+<p>Full lifecycle consulting from exploration to production.</p>
+</div>
+
+<div class="card">
+<h3>Global Mineral Trade</h3>
+<p>International trade of non-ferrous and strategic mineral products.</p>
+</div>
+
+</div>
+</section>
+
+<section class="map fade" id="global">
+<h2 style="color:#CFA348;">Global Strategic Layout</h2>
+<p>Core Regions: Africa | Central Asia</p>
+<p>Key Minerals: Gold | Copper | Lithium | Strategic Resources</p>
+</section>
+
+<section class="section fade" id="esg">
+<h2>ESG Commitment</h2>
+<p>
+We implement responsible mining, environmental protection, community partnership,
+and transparent governance aligned with global ESG frameworks.
+</p>
+</section>
+
+<section class="section fade" id="contact">
+<h2>Contact</h2>
+<p>Email: info@dekunglobal.com</p>
+<p>Headquarters: Hainan, China</p>
+</section>
+
+<footer>
+© 2026 HAINAN DEKUN INVESTMENT CO., LTD. All Rights Reserved.
+</footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+faders.forEach(f=>{
+const rect = f.getBoundingClientRect();
+if(rect.top < window.innerHeight - 100){
+f.classList.add('show');
+}
+});
+});
+
+function toggleLang(){
+let text = document.getElementById("hero-text");
+if(text.innerText.includes("Strategic")){
+text.innerText="战略布局非洲与中亚矿业资源";
+}else{
+text.innerText="Strategic Focus on Africa & Central Asia";
+}
+}
+</script>
+
+</body>
+</html>
